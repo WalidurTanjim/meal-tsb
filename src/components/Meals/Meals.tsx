@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Suspense } from 'react'
+import MealsList from '../MealsList/MealsList'
 
 const Meals = () => {
      return (
-          <div>
-
-          </div>
+          <Suspense fallback={<p>loading...</p>}>
+               <MealsList />
+          </Suspense>
      )
 }
 

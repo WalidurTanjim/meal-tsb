@@ -1,13 +1,13 @@
 import { Meal } from "@/types/meal";
 
 // base url
-const URL = process.env.MEAL_BASE_URL;
+const URL = process.env.NEXT_PUBLIC_MEAL_BASE_URL;
+// console.log(URL)
 
 // fetchMeals
 export const fetchMeals = async(url: string): Promise<Meal[]> => {
      try{
           const res = await fetch(url);
-          // const res = await fetch(`${url}/search.php?f=a`);
 
           if(!res.ok) {
                throw new Error(`Network response was not ok: ${res.statusText}`)

@@ -25,7 +25,7 @@ const MealCard = ({ meal }: { meal: Meal }) => {
                </div>
 
                {/* Content Container */}
-               <div className="p-5 flex flex-col flex-grow">
+               <div className="p-5 flex flex-col grow">
                     {/* Area / Country */}
                     {strArea && (
                          <span className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-1">
@@ -39,7 +39,7 @@ const MealCard = ({ meal }: { meal: Meal }) => {
                     </h3>
 
                     {/* Short Instructions Preview */}
-                    <p className="text-gray-600 text-sm line-clamp-2 mb-4 flex-grow">
+                    <p className="text-gray-600 text-sm line-clamp-2 mb-4 grow">
                          {strInstructions}
                     </p>
 

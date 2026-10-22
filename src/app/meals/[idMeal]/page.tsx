@@ -56,7 +56,7 @@ const DynamicMealDetails = async ({ params }: MealParams) => {
                {/* Top Section: Image & Basic Info */}
                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                     {/* Meal Thumbnail */}
-                    <div className="relative rounded-2xl overflow-hidden shadow-lg h-[350px] md:h-[420px] bg-gray-100">
+                    <div className="relative rounded-2xl overflow-hidden shadow-lg h-87.5 md:h-105 bg-gray-100">
                          <img 
                               src={dynamicMealById.strMealThumb} 
                               alt={dynamicMealById.strMeal} 

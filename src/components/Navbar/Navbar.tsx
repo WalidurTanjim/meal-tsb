@@ -11,8 +11,8 @@ const Navbar = () => {
                     <Link href={`/blog`}><li className='border rounded-md px-5 py-0.5'>Blog</li></Link>
                </ul>
                <div className='flex items-center justify-center space-x-1'>
-                    <button className='px-5 py-0.5 border rounded-md hover:bg-gray-300'>Signin</button>
-                    <button className='px-5 py-0.5 border rounded-md hover:bg-gray-300'>Signup</button>
+                    <Link href="/signin"><button className='px-5 py-0.5 border rounded-md hover:bg-gray-300'>Signin</button></Link>
+                    <Link href="/signup"><button className='px-5 py-0.5 border rounded-md hover:bg-gray-300'>Signup</button></Link>
                </div>
           </div>
      )

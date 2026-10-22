@@ -16,16 +16,21 @@ const SigninPage = () => {
      const [success, setSuccess] = useState("");
 
      // ফর্ম সাবমিট হ্যান্ডলার
-     const handleSubmit = (e: React.FormEvent) => {
+     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault();
           setError("");
           setSuccess("");
+
+          const formData = new FormData(e.currentTarget);
+          const formValues = Object.fromEntries(formData.entries());
 
           // সাধারণ ফিল্ড চেক
           if (!email || !password) {
                setError("Please fill in all fields.");
                return;
           }
+
+          console.log(formValues)
 
           // সব ঠিক থাকলে এখানে লগইন লজিক কাজ করবে
           setSuccess("Logged in successfully!");

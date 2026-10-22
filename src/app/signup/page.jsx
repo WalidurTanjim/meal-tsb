@@ -19,10 +19,19 @@ const SignupPage = () => {
      const [success, setSuccess] = useState("");
 
      // ফর্ম সাবমিট হ্যান্ডলার
-     const handleSubmit = (e) => {
+     const handleSubmit = async(e) => {
           e.preventDefault();
           setError("");
           setSuccess("");
+
+          const formData = new FormData(e.currentTarget);
+          const formValues = Object.fromEntries(formData.entries())
+
+          // ২. সাধারণ ফিল্ড চেক
+          if (!email || !password) {
+               setError("Please fill in all fields.");
+               return;
+          }
 
           // ১. পাসওয়ার্ড অন্তত ৮ ক্যারেক্টার, বড় হাতের, ছোট হাতের এবং স্পেশাল ক্যারেক্টার চেক করার রেগুলার এক্সপ্রেশন (Regex)
           const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/;
@@ -39,6 +48,8 @@ const SignupPage = () => {
                setError("Passwords do not match!");
                return;
           }
+
+          console.log(formValues)
 
           // সব ভ্যালিডেশন ঠিক থাকলে এখানে সাইন আপ লজিক কাজ করবে
           setSuccess("Account created successfully!");
